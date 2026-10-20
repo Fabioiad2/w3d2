@@ -39,7 +39,7 @@ const aggiungiTask = ({name,data,priority})=>{
   task.push({name,data,priority})
   console.log(...task)
   const li = document.createElement('li')
-  const title = document.createElement('h4')
+  const title = document.createElement('span')
   title.textContent = name
   const date = document.createElement('span')
   date.textContent =  data
@@ -54,9 +54,13 @@ const aggiungiTask = ({name,data,priority})=>{
   taskList.appendChild(li)
 }
 
+const dataFormattata =  new Date().toDateString('it-IT')
+
+
+
 const newtask ={
   name:"Nome task",
-  data: "20/10/2026, 16.33",
+  data: dataFormattata,
   priority:"alta"
 }
 
