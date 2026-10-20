@@ -72,7 +72,7 @@ const ciclaLista = ()=>{
         list.appendChild(nomeTask)
         list.appendChild(complessita)
         list.appendChild(date)
-        list.appendChild(deleteButton)
+        date.appendChild(deleteButton)
         container.appendChild(list)
     }))
     nTask.textContent = tasks.length
