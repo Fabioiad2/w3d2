@@ -12,3 +12,55 @@
    7. data automatica nel task
    8. contaPerPriorita()
 */
+
+// catturo lista-task
+const taskList = document.querySelector('#lista-task')
+const  contatore = document.querySelector('#contatore')
+
+// creo la lista dei task
+const task = [,
+
+]
+
+// creo la funzione aggiungi task con la decostruzione delle priorità
+
+// l'elemento padre degli li è tasklist 
+
+// dentro gli li  ci sarà
+
+// h4 pagare le bollette
+
+// button priorità
+// span e button
+
+
+
+const aggiungiTask = ({name,data,priority})=>{
+  const li = document.createElement('li')
+  const title = document.createElement('h4')
+  title.textContent = name
+  const date = document.createElement('span')
+  date.textContent =  data
+  const prioritybutton = document.createElement('button')
+  prioritybutton.textContent = priority
+  const deleteButton = document.createElement('button')
+  deleteButton.textContent = 'elimina'
+  li.appendChild(title)
+  li.appendChild(prioritybutton)
+  li.appendChild(date)
+  li.appendChild(deleteButton)
+  taskList.appendChild(li)
+}
+
+const newtask ={
+  name:"Nome task",
+  data: "20/10/2026, 16.33",
+  priority:"alta"
+}
+
+aggiungiTask(newtask)
+
+
+//  cercando di capire se inserire l'oggetto in una lsita però credo di si perchè altrimenti non ho la lista degli elementi da stampare
+
+contatore.innerHTML = task.length
