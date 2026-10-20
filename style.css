@@ -93,3 +93,8 @@ li button {
 	padding: 4px;
 	margin-left: 5px;
 }
+
+button:hover {
+	background-color: black;
+	color: white;
+}

@@ -1,9 +1,18 @@
-lisa di base tasklist creata
+creo la lista tasks
 
-catturato il contenitore padre tasklist
+poi catturo con l'id gli elementi:
 
-crea una lista chiamata task con proprietà name priority date
+ #lista-task -> la ul dove andranno i figli di li
+ #contatore -> lunghezza della lista
 
-creare la funzione aggiungi task che accetterà come parametro il nuovo oggetto
+ faccio il foreach della lista per prendere il singolo elemento
 
-dentro la funzione aggiungi task spread operatore della lista originale , parametro funzione
+ creo i figli di li
+ nomeTask
+ complessita
+ date
+ deleteButton
+
+ faccio apppenchild dei figli su li
+
+ poi stampa la lunghezza della lista nella stessa funzione
