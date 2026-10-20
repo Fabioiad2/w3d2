@@ -36,6 +36,8 @@ const task = [,
 
 
 const aggiungiTask = ({name,data,priority})=>{
+  task.push({name,data,priority})
+  console.log(...task)
   const li = document.createElement('li')
   const title = document.createElement('h4')
   title.textContent = name
@@ -59,8 +61,10 @@ const newtask ={
 }
 
 aggiungiTask(newtask)
+aggiungiTask(newtask)
+aggiungiTask(newtask)
 
 
 //  cercando di capire se inserire l'oggetto in una lsita però credo di si perchè altrimenti non ho la lista degli elementi da stampare
 
-contatore.innerHTML = task.length
+contatore.innerHTML = task.length - 1
