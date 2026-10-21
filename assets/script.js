@@ -19,7 +19,7 @@
 - intercettare lo span #contatore FATTO
 - Sostituire il contenuto dello span contatore col numero di oggetti nell'array FATTO */
 
-const tasks = [
+let tasks = [
     {
 		titoloTask: 'Mangiare',
 		priorita: 'alta',
@@ -49,6 +49,23 @@ const isCompletata =[
 let filtraPer = 'tutti';
 
 let tasksFiltrati = [...tasks];
+
+
+let taskForm = document.querySelector('#taskForm')
+let nomeTask = document.querySelector('#nuovo-task')
+let nuovoTask
+taskForm.addEventListener('submit',(e)=>{
+    e.preventDefault()
+    console.log(nomeTask.value)
+    nuovoTask = {
+        titoloTask:nomeTask.value,
+        priorita: "alta",
+        data: new Date(),
+        isCompletata: "da fare",
+    }
+    tasks = [...tasks, nuovoTask]
+    renderizza()
+})
 
 isCompletata.map((task=>{
     let bottone = document.createElement('button')
@@ -80,6 +97,10 @@ function renderizza() {
     
 }
 
+function EliminaItem(item){
+    console.log("elimina",item)
+}
+
 
 let container = document.querySelector('#lista-task')
 let nTask = document.querySelector('#contatore')
@@ -100,6 +121,7 @@ const ciclaLista = (lista)=>{
         complessita.textContent = task.priorita
         let deleteButton = document.createElement('button')
         deleteButton.textContent = 'Elimina'
+        deleteButton.addEventListener('click',EliminaItem(task))
         list.appendChild(nomeTask)
         list.appendChild(complessita)
         list.appendChild(date)
