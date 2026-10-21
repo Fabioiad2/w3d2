@@ -129,13 +129,19 @@ const ciclaLista = (lista)=>{
         let isCompletata = document.createElement('input')
         isCompletata.setAttribute('type','checkbox')
         isCompletata.checked = task.isCompletata == 'completati'
+        if(isCompletata.checked){
+            nomeTask.classList.add('completata')
+        }
         isCompletata.addEventListener('change',(e)=>{
             console.log(e.target.checked)
+
             if(e.target.checked === true){
                 task.isCompletata = 'completati'
+                 nomeTask.classList.add('completata')
             }
             else{
                 task.isCompletata = 'da fare'
+                 nomeTask.classList.remove('completata')
             }
             console.log(task)
         })

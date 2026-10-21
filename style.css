@@ -98,3 +98,7 @@ button:hover {
 	background-color: black;
 	color: white;
 }
+
+.completata {
+    text-decoration: line-through;
+}
