@@ -90,15 +90,19 @@ function renderizza() {
         
     }
     else if (filtraPer === 'da fare' || filtraPer === 'completati'){
-        ciclaLista(tasksFiltrati)
+       tasksFiltrati = tasks.filter(task=>{
+        return task.isCompletata == filtraPer
+       })
+       ciclaLista(tasksFiltrati)
     }
-
-
-    
 }
 
-function EliminaItem(item){
-    console.log("elimina",item)
+function EliminaItem(item) {
+    tasks = tasks.filter((task) => {
+        return task !== item
+    })
+    renderizza()
+
 }
 
 
@@ -121,13 +125,14 @@ const ciclaLista = (lista)=>{
         complessita.textContent = task.priorita
         let deleteButton = document.createElement('button')
         deleteButton.textContent = 'Elimina'
-        deleteButton.addEventListener('click',EliminaItem(task))
+        deleteButton.addEventListener('click',()=>EliminaItem(task))
         list.appendChild(nomeTask)
         list.appendChild(complessita)
         list.appendChild(date)
         date.appendChild(deleteButton)
         container.appendChild(list)
     }))
+    nTask.textContent = tasks.length
 }
 
 
