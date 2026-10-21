@@ -40,13 +40,13 @@ let tasks = [
 	},
 	
 ]
-const isCompletata =[
+const tabs =[
      "tutti",
      "da fare",
      "completati"
   
 ]
-let filtraPer = 'tutti';
+let filtroAttuale = 'tutti';
 
 let tasksFiltrati = [...tasks];
 
@@ -67,23 +67,33 @@ taskForm.addEventListener('submit',(e)=>{
     renderizza()
 })
 
-isCompletata.map((task=>{
+tabs.map((tab=>{
     let bottone = document.createElement('button')
     
-    bottone.textContent = task
-      if(task === filtraPer ){
+    
+    bottone.textContent = tab
+      if(tab === filtroAttuale ){
         bottone.classList.add('btnBlack')
     }
       
     bottone.addEventListener('click',()=>{
- 
-        console.log(task,"tipo")
-        console.log(filtraPer,"filtra per")
-        filtraPer = task
+        
+        console.log(tab,"tipo")
+        console.log(filtroAttuale,"filtra per")
+        filtroAttuale = tab
+        console.log(tab,"tab")
+        const tabsNere = document.getElementsByClassName('btnBlack')
+        console.log(tabsNere)
+        if(tabsNere.length > 0){
+            tabsNere[0].classList.remove('btnBlack')
+        }
+        if(tab.isCompletata === filtroAttuale){
+            console.log("io sono qualcuno")
+        }
          bottone.classList.add('btnBlack')
 
         tasksFiltrati = tasks.filter((task)=>{
-            return task.isCompletata === filtraPer
+            return task.isCompletata === filtroAttuale
             
         })
         
@@ -97,13 +107,13 @@ isCompletata.map((task=>{
 
 
 function renderizza() {
-    if (filtraPer === 'tutti') {
+    if (filtroAttuale === 'tutti') {
         ciclaLista(tasks)
         
     }
-    else if (filtraPer === 'da fare' || filtraPer === 'completati'){
+    else if (filtroAttuale === 'da fare' || filtroAttuale === 'completati'){
        tasksFiltrati = tasks.filter(task=>{
-        return task.isCompletata == filtraPer
+        return task.isCompletata == filtroAttuale
        })
        ciclaLista(tasksFiltrati)
     }

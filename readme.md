@@ -1,3 +1,12 @@
+ho risolto il problema dei colori della tabs
+
+ho cambiato alcuni nomi non parlanti.
+
+per vedere il problema di prima andare alla commit precedente a questa
+
+
+
+-----
 creo la lista tasks
 
 poi catturo con l'id gli elementi:
