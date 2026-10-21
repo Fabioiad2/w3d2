@@ -69,16 +69,28 @@ taskForm.addEventListener('submit',(e)=>{
 
 isCompletata.map((task=>{
     let bottone = document.createElement('button')
+    
     bottone.textContent = task
+      if(task === filtraPer ){
+        bottone.classList.add('btnBlack')
+    }
+      
     bottone.addEventListener('click',()=>{
+ 
+        console.log(task,"tipo")
+        console.log(filtraPer,"filtra per")
         filtraPer = task
+         bottone.classList.add('btnBlack')
+
         tasksFiltrati = tasks.filter((task)=>{
             return task.isCompletata === filtraPer
             
         })
+        
         renderizza()
         
     })
+      
     filtro.appendChild(bottone)
 
 }))
