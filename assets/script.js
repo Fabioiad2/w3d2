@@ -126,6 +126,20 @@ const ciclaLista = (lista)=>{
         let deleteButton = document.createElement('button')
         deleteButton.textContent = 'Elimina'
         deleteButton.addEventListener('click',()=>EliminaItem(task))
+        let isCompletata = document.createElement('input')
+        isCompletata.setAttribute('type','checkbox')
+        isCompletata.checked = task.isCompletata == 'completati'
+        isCompletata.addEventListener('change',(e)=>{
+            console.log(e.target.checked)
+            if(e.target.checked === true){
+                task.isCompletata = 'completati'
+            }
+            else{
+                task.isCompletata = 'da fare'
+            }
+            console.log(task)
+        })
+        list.appendChild(isCompletata)
         list.appendChild(nomeTask)
         list.appendChild(complessita)
         list.appendChild(date)
